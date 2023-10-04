@@ -1,9 +1,18 @@
-Instructions to update PHP settings on wordpress container
+Instructions to install and update PHP settings on wordpress container
 
-#Go into the connect conf.d directory on your host system.
+Pre reqs: ensure you have docker and its dependencies installed on your Raspbery Pi OS 64bit system. 
 
-cd /dockerdata/wordpress/conf.d
-sudo nano uploads.ini #use your favorite text editor to create the file uploads.ini or name it anything with .ini as the file extension. 
+#In the same directory as your wordpress-docker-compose.yaml file run the following command
+
+#Run the following command to start the container
+#In the same directory as your docker-compose-yaml file, run the following command
+
+docker compose up
+
+#After container is running, Access or ssh into the host system and then go into the directory where you linked the wordpress/conf.d volumes. 
+cd /dockerdata/wordpress/conf.d #example
+
+sudo nano uploads.ini #use your favorite text editor to create the file uploads.ini or name it anything with .ini as the file extension. File editiors you can use: Vi, Vim, Nano, etc.
 
 #contents for upload.ini. you can copy and paste these variables. you can change the values as needed. To add missing php modules just add them in using the extention= tag and the name of the extention. example: extention=mysqli
 
@@ -20,3 +29,9 @@ extension=mysqli
 # confirm with 'Y'
 
 #Restart wordpress stack after you save to bring up changes.
+
+#you can run 'docker image ls' to list all docker images. you should be able to see the wordpress and mysql images.
+
+#you can run 'docker ps' to see status of running containers. 
+
+#If you started Compose with 'docker compose up -d', stop your services once you've finished with them: 'docker compose stop'

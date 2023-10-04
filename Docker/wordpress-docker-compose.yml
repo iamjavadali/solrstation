@@ -1,3 +1,5 @@
+#Tested on Raspberry pi 4 - 8GB with Raspberry pi OS 64bit installed.
+
 version: '3.1'
 
 services:
@@ -30,7 +32,7 @@ services:
     networks:
       - wordpress     
     volumes:
-      - /dockerdata/wordpress/db:/var/lib/mysql #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress/db as is
+      - /dockerdata/wordpress/db:/var/lib/mysql #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress/db as is. the database needs to be in the wordpress container directory.
 
 volumes:
   wordpress:
