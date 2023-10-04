@@ -1,0 +1,87 @@
+Instructions to install Nextcloud Container
+
+Pre reqs: ensure you have docker and its dependencies installed on your Raspbery Pi OS 64bit system. 
+
+#In the same directory as your docker-compose-yaml file, run the following command
+
+docker compose up #Run the following command to start the container
+
+#Updates and fixes to the nextcloud service to do after installation of Nextcloud
+
+#On host machine, nagivate to the '/dockerdata/netcloud/config' repository.
+cd /dockerdata/nextcloud/config/
+
+#Use your faviorite text editior and edit the 'config.php' file. (ex. Vi, Vim, nano, etc.)
+sudo nano config.php
+
+#add the following to the bottom of the file before the ); closing tag.
+
+'default_phone_region' => 'US', #Set your default phone region. (ex. US for United States. You can google and find your region code)
+'overwriteprotocol' => 'https',
+
+#For redis server..
+#Under this line 'filelocking.enabled' => true, #add the line below
+
+'memcache.locking' => '\OC\Memcache\Redis',
+'redis' => array (
+  'host' => '/var/run/redis/redis.sock',
+  'port' => 0,
+  'timeout' => 0.0,
+  ),
+
+'memcache.locking' => '\OC\Memcache\APCu',
+
+#To SSH into the container
+sudo docker exec -it nextcloud-app-1 /bin/bash
+
+#To make your Php Max_Execution_Time value from the docker_compose.yaml work with NextCloud service. Do the following after you ssh into the container. 
+
+cd /usr/local/etc/php/conf.d
+apt update
+apt install nano #optional
+nano nextcloud.ini #use your faviorite text editor to edit this file.
+max_execution_time=${PHP_MAX_EXECUTION_TIME} #add this to bottom of the page.
+
+#To enable video thumbnails. 
+#ssh into the container machine and download and install 'ffmpeg'
+apt install ffmpeg -y
+
+Exit container ssh and enter host machine. Navigate to '/dockerdata/netcloud/config' repository and add this to 'config.php' file.
+
+cd /dockerdata/nextcloud/config/
+sudo nano config.php
+
+'enable_previews' => true,
+'enabledPreviewProviders' =>
+  array (
+    0 => 'OC\\Preview\\Movie',
+    1 => 'OC\\Preview\\PNG',
+    2 => 'OC\\Preview\\JPEG',
+    3 => 'OC\\Preview\\GIF',
+    4 => 'OC\\Preview\\BMP',
+    5 => 'OC\\Preview\\XBitmap',
+    6 => 'OC\\Preview\\MP3',
+    7 => 'OC\\Preview\\MP4',
+    8 => 'OC\\Preview\\TXT',
+    9 => 'OC\\Preview\\MarkDown',
+    10 => 'OC\\Preview\\PDF',
+  ),
+
+#ssh into the container machine and download and install 'ffmpeg'
+apt install ffmpeg -y
+
+#To SSH into the Nextcloud DB container
+sudo docker exec -it nextcloud_db-1 /bin/bash
+
+#If you are running Nextcloud behind the Ngnix Reverse Proxy Container Then add the following nginx reverse proxy entry in advance menu of the nextcloud proxy in the 'Custom Ngnix Configuration' text box. (This step is to be done on Nginx Reverse Proxy Manager NOT on nextcloud)
+
+proxy_read_timeout  7200s;
+client_max_body_size 0;
+
+location /.well-known/carddav {
+    return 301 $scheme://$host/remote.php/dav;
+}
+location /.well-known/caldav {
+    return 301 $scheme://$host/remote.php/dav;
+}
+
