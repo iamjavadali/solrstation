@@ -1,4 +1,4 @@
-Instructions to install Nextcloud Container
+Instructions to install Nextcloud Container and Patch Errors
 
 Pre reqs: ensure you have docker and its dependencies installed on your Raspbery Pi OS 64bit system. 
 
