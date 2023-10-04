@@ -1,6 +1,6 @@
-Solr Station
+**Solr Station**
 
-Solar Powered Home lab Docker Server on Raspberry Pi 4
+Solar Powered Home Lab Docker Server on Raspberry Pi 4
 
 I have created guides for your Home lab server running docker containers on a single board computer (sbc), the Raspberry Pi 4. This SBC is powerful yet energy-efficient enough that your solar array can easily power this 100% renewable and free. 
 
@@ -9,7 +9,7 @@ Containers in repo:
 2.	Wordpress-DB (MySQL)
 
 
-Current Containers How-to are in the progress of uploading to solrstation/docker repo:
+Current Containers **How-to** are in the process of uploading to **solrstation/docker** repo:
 1.	Portainer
 2.	WatchTower
 3.	NGINX Proxy Manager
@@ -28,6 +28,6 @@ Expect the following soon:
 6.	Uptime Kuma
 7.	Whoogle
 
-More Services are to be added soon. To request a service, reach out.
+More Services are to be added soon. If you would like a service, please feel free to reach out.
 
 Please contact me at info@javadali.com for more information or if you need support. Thank you for your contributions. 
