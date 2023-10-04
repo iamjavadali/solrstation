@@ -1,0 +1,22 @@
+Instructions to update PHP settings on wordpress container
+
+#Go into the connect conf.d directory on your host system.
+
+cd /dockerdata/wordpress/conf.d
+sudo nano uploads.ini #use your favorite text editor to create the file uploads.ini or name it anything with .ini as the file extension. 
+
+#contents for upload.ini. you can copy and paste these variables. you can change the values as needed. To add missing php modules just add them in using the extention= tag and the name of the extention. example: extention=mysqli
+
+#uploads.ini
+file_uploads = On
+memory_limit = 4G
+upload_max_filesize = 10G
+post_max_size = 10G
+max_execution_time = 6000
+max_input_time = 6000
+extension=mysqli
+
+# Ctrl+x
+# confirm with 'Y'
+
+#Restart wordpress stack after you save to bring up changes.

@@ -1,0 +1,40 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    image: wordpress
+    container_name: wordpress
+    restart: unless-stopped
+    ports:
+      - 1080:80 #You can change port 1080 to any avaiable port on your network.
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: admin #Set username for database
+      WORDPRESS_DB_PASSWORD: password #Set password for database
+      WORDPRESS_DB_NAME: wordpress #Set name to the database
+    networks:
+      - wordpress     
+    volumes:
+      - /dockerdata/wordpress:/var/www/html #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress as is
+      - /dockerdata/wordpress/conf.d:/usr/local/etc/php/conf.d #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress/conf.d as is
+
+  db:
+    image: mysql
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: wordpress #Use same name you created above for database
+      MYSQL_USER: admin #Use same username you created above for database
+      MYSQL_PASSWORD: password #Use the same password you created above for database
+      MYSQL_ROOT_PASSWORD: rootpassword #Create a root database password
+    networks:
+      - wordpress     
+    volumes:
+      - /dockerdata/wordpress/db:/var/lib/mysql #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress/db as is
+
+volumes:
+  wordpress:
+  db:
+
+networks:
+  wordpress:
