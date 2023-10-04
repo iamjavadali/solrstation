@@ -7,6 +7,9 @@ I have created guides for your Home lab server running docker containers on a si
 Containers in repo:
 1.	WordPress
 2.	WordPress-DB (MySQL)
+3.  NextCloud
+4.	NextCloud-DB (MariaDB)
+5.	NextCloud-Redis(Alpine)
 
 
 Current Containers **How-to** are in the process of uploading to **solrstation/docker** repo:
@@ -14,10 +17,7 @@ Current Containers **How-to** are in the process of uploading to **solrstation/d
 2.	WatchTower
 3.	NGINX Proxy Manager
 4.	NGINX Stats - GoAccess Charts
-5.	NextCloud
-6.	NextCloud-DB (MariaDB)
-7.	NextCloud-Redis(Alpine)
-8.	OnlyOfficeServer
+5.	OnlyOfficeServer
 
 Expect the following soon:
 1.	Plex
