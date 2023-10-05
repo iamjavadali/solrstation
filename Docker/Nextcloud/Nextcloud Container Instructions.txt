@@ -1,26 +1,55 @@
-Instructions to install Nextcloud Container and Patch Errors
+Instructions on how to install Nextcloud on Raspberry Pi 4 running on Raspberry Pi OS 64bit. Most Common Patches and Errors are fixed here as well. 
 
-Pre reqs: ensure you have docker and its dependencies installed on your Raspbery Pi OS 64bit system. 
+PRE-REQs: Docker and its dependencies installed on your Raspberry Pi device.
+64bit OS: https://docs.docker.com/engine/install/debian/
+34bit OS: https://docs.docker.com/engine/install/raspberry-pi-os/
 
-#In the same directory as your docker-compose-yaml file, run the following command
+To start the Nextcloud container, in the same directory as the docker-compose-yaml file, run the following command.
 
-docker compose up #Run the following command to start the container
+docker compose up
 
-#Updates and fixes to the nextcloud service to do after installation of Nextcloud
+This command will start the nextcloud container.
 
-#On host machine, nagivate to the '/dockerdata/netcloud/config' repository.
+To SSH into the Nextcloud container
+
+sudo docker exec -it nextcloud-app-1 /bin/bash 
+
+#To SSH into the Nextcloud DB container
+
+sudo docker exec -it nextcloud_db-1 /bin/bash
+
+****************************************************************************
+
+Common Patches and Errors Fix!
+
+1.  Fix 'default_phone_region' error
+2.  Fix 'Some HTTP links not rewritten to HTTPS'
+3.  Add Memcache Redis Server into configuration
+4.  Fix php 'max_execution_time' from updating to the values updated in docker-compose.yaml file
+5.  Add 'Video thumbnail' to Media
+6.  Nginx Reverse Pronxy Manager 'advance -> Custom nginx configuration' settings.
+
+****************************************************************************
+
+On host machine, nagivate to the '/dockerdata/netcloud/config' repository.
 cd /dockerdata/nextcloud/config/
 
-#Use your faviorite text editior and edit the 'config.php' file. (ex. Vi, Vim, nano, etc.)
+Use your faviorite text editior and edit the 'config.php' file. (ex. vi, vim, nano, etc.)
+
 sudo nano config.php
 
-#add the following to the bottom of the file before the ); closing tag.
+****************************************************************************
 
-'default_phone_region' => 'US', #Set your default phone region. (ex. US for United States. You can google and find your region code)
+You can google and find your region code to set the default phone region values. ex. US for United States.
+
+Add the following code to the bottom of the file before the ); closing tag.
+
+'default_phone_region' => 'US',
 'overwriteprotocol' => 'https',
 
-#For redis server..
-#Under this line 'filelocking.enabled' => true, #add the line below
+****************************************************************************
+
+To Add Memcache Redis server. Under this line 'filelocking.enabled' => true, #add the line below
 
 'memcache.locking' => '\OC\Memcache\Redis',
 'redis' => array (
@@ -29,24 +58,25 @@ sudo nano config.php
   'timeout' => 0.0,
   ),
 
-'memcache.locking' => '\OC\Memcache\APCu',
+****************************************************************************
 
-#To SSH into the container
-sudo docker exec -it nextcloud-app-1 /bin/bash
+To make your php Max_Execution_Time value from the docker_compose.yaml update with the NextCloud service. Perform the following.
 
-#To make your Php Max_Execution_Time value from the docker_compose.yaml work with NextCloud service. Do the following after you ssh into the container. 
-
+sudo docker exec -it nextcloud-app-1 /bin/bash #ssh into nextcloud container
 cd /usr/local/etc/php/conf.d
 apt update
-apt install nano #optional
+apt install nano #optional, you can use any edititor.
 nano nextcloud.ini #use your faviorite text editor to edit this file.
 max_execution_time=${PHP_MAX_EXECUTION_TIME} #add this to bottom of the page.
 
-#To enable video thumbnails. 
-#ssh into the container machine and download and install 'ffmpeg'
+****************************************************************************
+
+To enable video thumbnails ssh into the nextcloud container and download, install 'ffmpeg'
+
+sudo docker exec -it nextcloud-app-1 /bin/bash
 apt install ffmpeg -y
 
-Exit container ssh and enter host machine. Navigate to '/dockerdata/netcloud/config' repository and add this to 'config.php' file.
+In the host machine navigate to '/dockerdata/netcloud/config' directory and edit the 'config.php' file and add the code before before the ); closing tag in the bottom of the page.
 
 cd /dockerdata/nextcloud/config/
 sudo nano config.php
@@ -67,11 +97,7 @@ sudo nano config.php
     10 => 'OC\\Preview\\PDF',
   ),
 
-#ssh into the container machine and download and install 'ffmpeg'
-apt install ffmpeg -y
-
-#To SSH into the Nextcloud DB container
-sudo docker exec -it nextcloud_db-1 /bin/bash
+****************************************************************************
 
 #If you are running Nextcloud behind the Ngnix Reverse Proxy Container Then add the following nginx reverse proxy entry in advance menu of the nextcloud proxy in the 'Custom Ngnix Configuration' text box. (This step is to be done on Nginx Reverse Proxy Manager NOT on nextcloud)
 
@@ -85,3 +111,10 @@ location /.well-known/caldav {
     return 301 $scheme://$host/remote.php/dav;
 }
 
+****************************************************************************
+
+#you can run 'docker image ls' to list all docker images. you should be able to see the nextcloud, nextclou_db and redis images.
+
+#you can run 'docker ps' to see status of running containers. 
+
+#If you started Compose with 'docker compose up -d', stop your services once you've finished with them: 'docker compose stop'

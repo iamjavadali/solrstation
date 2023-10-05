@@ -1,22 +1,27 @@
-Instructions to install and update PHP settings on wordpress container
+Instructions on how to install WordPress container and update/install extentions.
 
-Pre reqs: ensure you have docker and its dependencies installed on your Raspbery Pi OS 64bit system. 
+PRE-REQs: Docker and its dependencies installed on your Raspberry Pi device.
+64bit OS: https://docs.docker.com/engine/install/debian/
+34bit OS: https://docs.docker.com/engine/install/raspberry-pi-os/
 
-#In the same directory as your wordpress-docker-compose.yaml file run the following command
-
-#Run the following command to start the container
-#In the same directory as your docker-compose-yaml file, run the following command
+To start the Nextcloud container, in the same directory as the docker-compose-yaml file, run the following command.
 
 docker compose up
 
-#After container is running, Access or ssh into the host system and then go into the directory where you linked the wordpress/conf.d volumes. 
-cd /dockerdata/wordpress/conf.d #example
+This command will start the nextcloud container.
 
-sudo nano uploads.ini #use your favorite text editor to create the file uploads.ini or name it anything with .ini as the file extension. File editiors you can use: Vi, Vim, Nano, etc.
+****************************************************************************
 
-#contents for upload.ini. you can copy and paste these variables. you can change the values as needed. To add missing php modules just add them in using the extention= tag and the name of the extention. example: extention=mysqli
+After container is up and running go into the directory where you linked the wordpress/conf.d volumes on the host machine. 
 
-#uploads.ini
+cd /dockerdata/wordpress/conf.d
+
+Use your favorite text editor to create the file 'uploads.ini' or name it anything with .ini as the file extension. File editiors you can use: Vi, Vim, Nano, etc.
+
+sudo nano uploads.ini
+
+Contents for upload.ini. You can copy and paste these variables below and you can change the values as needed. To add missing php modules just add them in using the extention= tag and the name of the extention. example: extention=mysqli
+
 file_uploads = On
 memory_limit = 4G
 upload_max_filesize = 10G
@@ -25,10 +30,13 @@ max_execution_time = 6000
 max_input_time = 6000
 extension=mysqli
 
-# Ctrl+x
-# confirm with 'Y'
+To exit the file using nano editor. Use Ctrl+x and then confirm with 'Y' to save the file.
 
-#Restart wordpress stack after you save to bring up changes.
+Restart wordpress stack after you save to bring up changes.
+
+docker restart wordpress
+
+****************************************************************************
 
 #you can run 'docker image ls' to list all docker images. you should be able to see the wordpress and mysql images.
 
