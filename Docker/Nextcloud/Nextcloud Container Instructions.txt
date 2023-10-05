@@ -1,10 +1,10 @@
-Instructions on how to install Nextcloud on Raspberry Pi 4 running on Raspberry Pi OS 64bit. Most Common Patches and Errors are fixed here as well. 
+Instructions on how to install Nextcloud on Raspberry Pi 4 running on Raspberry Pi OS 64bit. Most Common Patches and Errors are fixed here as well.
 
 PRE-REQs: Docker and its dependencies installed on your Raspberry Pi device.
 64bit OS: https://docs.docker.com/engine/install/debian/
 34bit OS: https://docs.docker.com/engine/install/raspberry-pi-os/
 
-To start the Nextcloud container, in the same directory as the docker-compose-yaml file, run the following command.
+To start the Nextcloud container, in the same directory as the docker-compose.yaml file, run the following command.
 
 docker compose up
 
