@@ -1,0 +1,29 @@
+version: '3.1'
+
+services:
+
+  wordpress:
+    build:
+      context: ./wordpress
+    image: moneydontbuyclass/wordpresspi
+    container_name: wordpress
+    restart: unless-stopped
+    ports:
+      - 1080:80 #You can change port 1080 to any avaiable port on your network.   
+    volumes:
+      - wordpress:/var/www/html #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress as is
+
+  wordpressdb:
+    build:
+      context: ./mysql
+    image: moneydontbuyclass/wordpresspidb
+    container_name: wordpressdb
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=rootpassword
+    volumes:
+      - wordpressdb:/var/lib/mysql #You can change the directory /dockerdata/ to any of your choice but keep the ending /wordpress/db as is. the database needs to be in the wordpress container directory.
+
+volumes:
+  wordpress: {}
+  wordpressdb: {}
