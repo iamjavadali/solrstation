@@ -1,0 +1,47 @@
+#Tested on Raspberry pi 4 - 8GB with Raspberry pi OS 64bit installed.
+#Please follow instruction sheet for fixes and patches on installation.
+version: '2'
+
+volumes:
+  nextcloud:
+  db:
+
+services:
+  db:
+    image: mariadb:10.6
+    restart: always
+    command: --transaction-isolation=READ-COMMITTED --log-bin=binlog --binlog-format=ROW
+    volumes:
+      - /dockerdata/nextcloud_db:/var/lib/mysql #You can change the directory /dockerdata/ to any of your choice but keep the ending /nextcloud_db as is
+    environment:
+      - MYSQL_ROOT_PASSWORD=password #Set root password for database
+      - MYSQL_PASSWORD=password #Set password for database
+      - MYSQL_DATABASE=nextcloud #Set database name for database
+      - MYSQL_USER=admin #Set username for database
+
+  app:
+    image: nextcloud
+    restart: always
+    ports:
+      - 8080:80 #You can change port 8080 to any avaiable port on your network.
+    links:
+      - db
+    volumes:
+      - /dockerdata/nextcloud:/var/www/html #You can change the directory /dockerdata/ to any of your choice but keep the ending /nextcloud as is
+    environment:
+      - MYSQL_PASSWORD=password #Use same password you used above for database
+      - MYSQL_DATABASE=nextcloud #Use same name you used above for database
+      - MYSQL_USER=admin #Use same username you used above for database
+      - MYSQL_HOST=db
+      - PHP_MEMORY_LIMIT=4G
+      - PHP_UPLOAD_LIMIT=10G
+      - PHP_MAX_EXECUTION_TIME=7200 #Use same name you created above for database
+      - REDIS_HOST=redis
+
+  redis:
+    image: redis:alpine
+    container_name: redis
+    volumes:
+      - /dockerdata/nextcloud/redis:/data #You can change the directory /dockerdata/ to any of your choice but keep the ending /nextcloud/redis as is
+
+    restart: unless-stopped
