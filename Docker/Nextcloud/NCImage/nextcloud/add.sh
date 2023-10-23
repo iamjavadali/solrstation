@@ -1,7 +1,7 @@
 #!/bin/bash
 
 sed -i "/);/i 'default_phone_region' => 'US'," /var/www/html/config/config.php
-sed -i "/);/i 'overwriteprotocol' => 'https'," /var/www/html/config/config.php
+sed -i "/);/i 'overwriteprotocol' => 'http'," /var/www/html/config/config.php
 
 sed -i "/);/i 'enable_previews' => true," /var/www/html/config/config.php
 sed -i "/);/i 'enabledPreviewProviders' =>" /var/www/html/config/config.php

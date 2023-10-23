@@ -18,4 +18,4 @@ ADD config.sh /scripts/config.sh
 RUN chmod +x /scripts/config.sh && /scripts/config.sh
 
 Add add.sh /scripts/add.sh
-RUN chmod +x /scripts/add.sh
+RUN chmod +x /scripts/add.sh && /scripts/add.sh

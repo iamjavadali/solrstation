@@ -1,0 +1,11 @@
+header_description: "A input list of website link names, link url, and a single-word website “type”. Website links includes Yahoo, Stackoverflow, and Wikipedia"
+websites:
+  - name: "Yahoo"
+    url: "https://www.yahoo.com"
+    type: "search"
+  - name: "Stackoverflow"
+    url: "https://www.stackoverflow.com"
+    type: "code"
+  - name: "Wikipedia"
+    url: "https://www.wikipedia.org"
+    type: "research"

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Javad's Jinja2 Template</title>
+</head>
+<body>
+    <h1>{{ header_description }}</h1>
+    <p>
+        Below is the list of websites: 
+    </p>
+    <ul>
+        {% for website in websites %}
+            <li>
+                <a href="{{ website.url }}" {% if website.type == "code" %}class="emphasis"{% endif %}>{{ website.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
