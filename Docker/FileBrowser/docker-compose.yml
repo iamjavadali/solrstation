@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+
+  filebrowser:
+    image: filebrowser/filebrowser
+    container_name: filebrowser
+    restart: unless-stopped
+    ports: 
+      - 2080:80 #You can change port 2080 to any avaiable port on your network.   
+    user: "0:0"
+    volumes:
+      - filebrowser:/srv
+      - /var/lib/docker/volumes/filebrowser_filebrowser/filebrowser.db:/database/filebrowser.db 
+      - /var/lib/docker/volumes/filebrowser_filebrowser/settings.json:/config/settings.json
+
+
+volumes:
+  filebrowser: {}
