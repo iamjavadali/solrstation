@@ -10,10 +10,11 @@ services:
     ports:
       - "25565:25565"
     environment:
-      - PUID=0 #change if not root user
-      - PGID=0 #change if not root user
+      - PUID=1001 #change for your user. run command id
+      - PGID=1001 #change for your user. run command id
       - TZ=America/New_York
       - VERSION=docker
+      - PLEX_CLAIM=claim-q8w9YSQzSF1dAtymzevv #change this to get your own claim go to plex.tv/claim
     volumes:
       - plexdata:/config
       - /media/downloads/tvseries:/tv
