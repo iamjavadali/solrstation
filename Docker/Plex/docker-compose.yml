@@ -11,7 +11,7 @@ services:
       - PUID=1001 #change for your user. run command id (pi is 1000, root is 0)
       - PGID=1001 #change for your user. run command id (pi is 1000, root is 0)
       - TZ=America/New_York
-      - VERSION=latest
+      - VERSION=docker
     # - PLEX_CLAIM=  go to plex.tv/claim
     volumes:
       - data:/config
