@@ -12,7 +12,7 @@ services:
       - PGID=1001 #change for your user. run command id (pi is 1000, root is 0)
       - TZ=America/New_York
       - VERSION=docker
-    # - PLEX_CLAIM=  go to plex.tv/claim
+      - PLEX_CLAIM=claim-BjNFxenhHeLrxsSsuwEK  #go to plex.tv/claim
     volumes:
       - data:/config
       - /downloads/tvseries:/tv
@@ -20,3 +20,5 @@ services:
 
 volumes:
   data: {}
+
+# run the following command if 32400 port did not work. sudo iptables -I INPUT -j ACCEPT
