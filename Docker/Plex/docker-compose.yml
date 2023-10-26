@@ -13,12 +13,12 @@ services:
       - PUID=1001 #change for your user. run command id
       - PGID=1001 #change for your user. run command id
       - TZ=America/New_York
-      - VERSION=docker
+      - VERSION=latest
       - PLEX_CLAIM=claim-q8w9YSQzSF1dAtymzevv #change this to get your own claim go to plex.tv/claim
     volumes:
-      - plexdata:/config
-      - /media/downloads/tvseries:/tv
-      - /media/downloads/movies:/movies
+      - data:/config
+      - /downloads/tvseries:/tv
+      - /downloads/movies:/movies
 
 volumes:
-  plexdata: {}
+  data: {}
