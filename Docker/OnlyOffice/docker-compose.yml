@@ -14,7 +14,7 @@ services:
       - /var/lib/docker/volumes/onlyoffice_data/_data/DocumentServer/lib:/var/lib/onlyoffice
       - /var/lib/docker/volumes/onlyoffice_data/_data/DocumentServer/db:/var/lib/postgresql
     ports:
-      - 2080:80
+      - 3080:80
     restart: always
 
 volumes:
