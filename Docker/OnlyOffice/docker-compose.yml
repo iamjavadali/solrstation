@@ -10,9 +10,9 @@ services:
       - WOPI_ENABLED=true
     volumes:
       - data:/var/www/onlyoffice/Data
-      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/logs:/var/log/onlyoffice
-      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/lib:/var/lib/onlyoffice
-      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/db:/var/lib/postgresql
+      - /var/lib/docker/volumes/onlyoffice_data/_data/logs:/var/log/onlyoffice
+      - /var/lib/docker/volumes/onlyoffice_data/_data/lib:/var/lib/onlyoffice
+      - /var/lib/docker/volumes/onlyoffice_data/_data/db:/var/lib/postgresql
     ports:
       - 20801:80
     restart: always
