@@ -1,0 +1,21 @@
+version: "2.1"
+
+services:
+  
+  onlyoffice:
+    image: onlyoffice/documentserver
+    container_name: onlyoffice
+    environment:
+      - JWT_SECRET=oracleadmin
+      - WOPI_ENABLED=true
+    volumes:
+      - data:/var/www/onlyoffice/Data
+      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/logs:/var/log/onlyoffice
+      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/lib:/var/lib/onlyoffice
+      - /var/lib/docker/volumes/onlyoffice_onlyoffice/_data/db:/var/lib/postgresql
+    ports:
+      - 20801:80
+    restart: always
+
+volumes:
+  data: {}
