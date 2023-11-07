@@ -15,8 +15,11 @@ services:
       - PLEX_CLAIM=claim-BjNFxenhHeLrxsSsuwEK  #go to plex.tv/claim
     volumes:
       - data:/config
-      - /downloads/tvseries:/tv
-      - /downloads/movies:/movies
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/tvseries:/tv
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/movies:/movies
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/music:/music
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/photos:/photos
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/downloads:/downloads
 
 volumes:
   data: {}
