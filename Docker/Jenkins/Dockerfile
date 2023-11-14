@@ -8,4 +8,4 @@ EXPOSE 50000
 
 ADD config.sh /scripts/config.sh
 RUN chmod +x /scripts/config.sh
-RUN /scripts/config.sh bin/sh
+RUN bin/sh /scripts/config.sh 
