@@ -6,8 +6,8 @@ services:
     image: lscr.io/linuxserver/transmission:latest
     container_name: Transmission
     environment:
-      - PUID=1001
-      - PGID=1001
+      - PUID=1001 #change this to your docker user ID
+      - PGID=1001 #change this to your docker user ID
       - TZ=America/New_York
       - TRANSMISSION_WEB_HOME= #optional
       - USER= #optional

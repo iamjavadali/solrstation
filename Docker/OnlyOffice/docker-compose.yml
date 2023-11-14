@@ -6,7 +6,7 @@ services:
     image: onlyoffice/documentserver
     container_name: onlyoffice
     environment:
-      - JWT_SECRET=oracleadmin
+      - JWT_SECRET=secret #change this secret key to something you will remember
       - WOPI_ENABLED=true
     volumes:
       - /var/lib/docker/volumes/onlyoffice_data/_data/DocumentServer/data:/var/www/onlyoffice/Data

@@ -18,4 +18,3 @@ sed -i "/);/i 8 => 'OC\\Preview\\TXT'," /var/www/html/config/config.php
 sed -i "/);/i 9 => 'OC\\Preview\\MarkDown'," /var/www/html/config/config.php
 sed -i "/);/i 10 => 'OC\\Preview\\PDF'," /var/www/html/config/config.php
 sed -i "/);/i )," /var/www/html/config/config.php
-
