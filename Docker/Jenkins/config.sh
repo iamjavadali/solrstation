@@ -22,7 +22,7 @@
 
 
 apk update
-apk add jenkins -y
+apk add jenkins
 
 #Display temp password for inital login and save to jenkins_pass.txt file
-cat /var/lib/jenkins/secrets/initialAdminPassword > /jenkins_pass.txt
+#cat /var/lib/jenkins/secrets/initialAdminPassword > /jenkins_pass.txt
