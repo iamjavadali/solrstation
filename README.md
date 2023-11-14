@@ -19,7 +19,7 @@ Containers in repo:
 12.	Minecraft Server
 13.	OnlyOfficeServer
 
-Current Containers **How-to** are in the process of uploading to **solrstation/docker** repo:
+Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
 1.	Portainer
 2.	WatchTower
 3.	Pi-Hole
