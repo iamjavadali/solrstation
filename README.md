@@ -16,18 +16,19 @@ Containers in repo:
 9.	Plex
 10.	FileBrowser
 11.	Transmission
+12.	Minecraft Server
+13.	OnlyOfficeServer
 
 Current Containers **How-to** are in the process of uploading to **solrstation/docker** repo:
 1.	Portainer
 2.	WatchTower
-3.	OnlyOfficeServer
+3.	Pi-Hole
+4.	Uptime Kuma
 
 Expect the following soon:
 1.	JDownloader
-2.	Pi-Hole
-3.	Uptime Kuma
-4.	Whoogle
+2.	Whoogle
 
-More Services are to be added soon. If you would like a service, please feel free to let me know.
+More Services are to be added soon. If you would like a service, please let me know.
 
 Please get in touch with me at info@javadali.com for more information or if you need support. Thank you for your contributions. 
