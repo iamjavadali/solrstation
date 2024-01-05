@@ -1,0 +1,29 @@
+NC_Instructions.txt
+
+sudo -i
+cd /var/lib/docker/volumes/ncimage_nextcloud/_data/config
+nano config.php
+
+#add the following code before the ending );
+
+  'default_phone_region' => 'US',
+  'maintenance' => false,
+  'enable_previews' => true,
+  'enabledPreviewProviders' => 
+  array (
+    0 => 'OC\\Preview\\Movie',
+    1 => 'OC\\Preview\\PNG',
+    2 => 'OC\\Preview\\JPEG',
+    3 => 'OC\\Preview\\GIF',
+    4 => 'OC\\Preview\\BMP',
+    5 => 'OC\\Preview\\XBitmap',
+    6 => 'OC\\Preview\\MP3',
+    7 => 'OC\\Preview\\MP4',
+    8 => 'OC\\Preview\\TXT',
+    9 => 'OC\\Preview\\MarkDown',
+    10 => 'OC\\Preview\\PDF',
+  ),
+
+ #add domain into trusted domain
+
+ 1 => 'yourdomain.com',
