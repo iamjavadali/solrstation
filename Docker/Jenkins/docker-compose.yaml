@@ -1,0 +1,18 @@
+version: '2'
+
+services:
+
+  jenkins:
+    build:
+      context: ./
+    image: moneydontbuyclass/jenkinspi
+    container_name: jenkinspi
+    restart: unless-stopped
+    ports:
+      - 8081:80 #You can change port 8081 to any avaiable port on your network.
+      - 50000:50000 #You can change port 50000 to any aviable port on your network.
+    volumes:
+      - jenkins:/var/jenkins_home
+
+volumes:
+  jenkins: {}
