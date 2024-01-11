@@ -18,6 +18,7 @@ Containers in repo:
 11.	Transmission
 12.	Minecraft Server
 13.	OnlyOfficeServer
+14. HomeAssistant
 
 Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
 1.	Portainer
