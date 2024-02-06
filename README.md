@@ -19,12 +19,12 @@ Containers in repo:
 12.	Minecraft Server
 13.	OnlyOfficeServer
 14. HomeAssistant
+15. Portainer
 
 Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
-1.	Portainer
-2.	WatchTower
-3.	Pi-Hole
-4.	Uptime Kuma
+1.	WatchTower
+2.	Pi-Hole
+3.	Uptime Kuma
 
 Expect the following soon:
 1.	JDownloader
