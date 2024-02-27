@@ -41,3 +41,8 @@ sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 --ti
 # Cleanup files:
 
 sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 cleanup
+
+#Remember to make script file executable by running the following command before you run this script
+
+# sudo chmod +x ./Run-Disk-Read-Write-Speed-Test.sh
+# ./Run-Disk-Read-Write-Speed-Test.sh
