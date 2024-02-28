@@ -13,12 +13,27 @@ ENV WORDPRESS_DB_NAME="wordpress"
 RUN apt update && apt install unzip -y
 
 COPY custom.ini /usr/local/etc/php/conf.d/custom.ini
+
 COPY wp-config.php /var/www/html/wp-config.php
-
-RUN chown www-data wp-config.php && chgrp www-data wp-config.php
-
 
 COPY redis-cache.zip /var/www/html/wp-content/plugins/redis-cache.zip
 
-
 RUN cd /var/www/html/wp-content/plugins/ && unzip redis-cache.zip
+
+RUN chown www-data redis-cache && chgrp www-data redis-cache
+
+RUN chmod 777 redis-cache
+
+COPY breeze.zip /var/www/html/wp-content/plugins/breeze.zip
+
+RUN cd /var/www/html/wp-content/plugins/ && unzip breeze.zip
+
+RUN chown www-data breeze && chgrp www-data breeze
+
+RUN chmod 777 breeze
+
+COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
+
+RUN chmod +x add_wp_redis_host.sh
+
+RUN ./add_wp_redish_host.sh
