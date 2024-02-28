@@ -20,30 +20,29 @@ Build + Run docker compose
 
 Port Info:
 
-	nginx admin port: 81
-	goaccess stats port: 7880
-	mariadb port: 3306
+	wordpress port: 1080
+	mysql port: 3306
 
-After the Nginx Proxy Manager is running for the first time, the following will happen:
+After the wordpress is running for the first time, you must visit its url in any web browser to start setup
 
-	GPG keys will be generated and saved in the data folder
-	The database will initialize with table structures
-	A default admin user will be created
+# host-machine-ip:1080
+# example: 192.168.1.50:1080	
 
 This process can take a couple of minutes depending on your machine.
 
-Default Administrator User
+After setup return to host machine and run the following command to script for adding redis support.
 
-	Email:    admin@example.com
-	Password: changeme
-
-Immediately after logging in with this default user you will be asked to modify your details and change your password.
-
-Nginx official documentation setup
-
-	https://nginxproxymanager.com/setup/#using-mysql-mariadb-database
+# sudo docker exec wordpress /var/www/html/add_wp_redis_host.sh
 
 
-# Run after building and running stack
 
-sudo docker exec wordpress /var/www/html/add_wp_redis_host.sh
+Addtional Wordpress Support within this Image
+
+**PHP supported** can be changed in custom.ini file before building image.
+
+- php memory limit is set to 4 Gig
+- upload max size is set to 10 Gig
+- post max size is set to 4 Gig
+- max execution time is set to 1 hour and 40 min
+- max input time is set to 1 hour and 40 min
+- php extension mysqli is added
