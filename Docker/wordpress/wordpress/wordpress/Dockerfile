@@ -38,9 +38,8 @@ COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
 RUN chmod +x add_wp_redis_host.sh
 
-COPY run_after_startup.sh /etc/init.d/run_after_startup.sh
+COPY run_after_startup.sh /var/www/html/run_after_startup.sh
 
-RUN ln -s /etc/init.d/run_after_startup.sh /etc/rc.d/
+RUN chmod +x /var/www/html/run_after_startup.sh
 
-RUN chmod +x /etc/init.d/run_after_startup.sh
-
+RUN /var/www/html/run_after_startup.sh
