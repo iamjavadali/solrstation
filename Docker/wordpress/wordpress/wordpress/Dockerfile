@@ -18,17 +18,21 @@ COPY redis-cache.zip /var/www/html/wp-content/plugins/redis-cache.zip
 
 RUN cd /var/www/html/wp-content/plugins/ && unzip redis-cache.zip
 
-RUN chown www-data redis-cache && chgrp www-data redis-cache
+RUN cd /var/www/html/wp-content/plugins/ && chown www-data redis-cache
 
-RUN chmod 777 redis-cache
+RUN cd /var/www/html/wp-content/plugins/ && chgrp www-data redis-cache
+
+RUN cd /var/www/html/wp-content/plugins/ && chmod 777 redis-cache
 
 COPY breeze.zip /var/www/html/wp-content/plugins/breeze.zip
 
 RUN cd /var/www/html/wp-content/plugins/ && unzip breeze.zip
 
-RUN chown www-data breeze && chgrp www-data breeze
+RUN cd /var/www/html/wp-content/plugins/ && chown www-data breeze
 
-RUN chmod 777 breeze
+RUN cd /var/www/html/wp-content/plugins/ && chgrp www-data breeze
+
+RUN cd /var/www/html/wp-content/plugins/ && chmod 777 breeze
 
 COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
