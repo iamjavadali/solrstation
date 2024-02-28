@@ -37,9 +37,3 @@ RUN cd /var/www/html/wp-content/plugins/ && chmod 777 breeze
 COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
 RUN chmod +x add_wp_redis_host.sh
-
-COPY run_after_startup.sh /var/www/html/run_after_startup.sh
-
-RUN chmod +x /var/www/html/run_after_startup.sh
-
-RUN /var/www/html/run_after_startup.sh &
