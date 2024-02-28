@@ -36,8 +36,8 @@ RUN cd /var/www/html/wp-content/plugins/ && chmod 777 breeze
 
 COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
-RUN cd /var/www/html/wp-content/plugins/ && chown www-data add_wp_redis_host.sh
+RUN cd /var/www/html/ && chown www-data add_wp_redis_host.sh
 
-RUN cd /var/www/html/wp-content/plugins/ && chgrp www-data add_wp_redis_host.sh
+RUN cd /var/www/html/ && chgrp www-data add_wp_redis_host.sh
 
 RUN chmod +x add_wp_redis_host.sh
