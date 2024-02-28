@@ -1,0 +1,29 @@
+version: "2.1"
+
+services:
+  
+  transmission:
+    image: lscr.io/linuxserver/transmission:latest
+    container_name: Transmission
+    environment:
+      - PUID=1001 #change this to your docker user ID
+      - PGID=1001 #change this to your docker user ID
+      - TZ=America/New_York
+      - TRANSMISSION_WEB_HOME= #optional
+      - USER= #optional
+      - PASS= #optional
+      - WHITELIST= #optional
+      - PEERPORT= #optional
+      - HOST_WHITELIST= #optional
+    volumes:
+      - data:/config
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/downloads:/downloads
+      - /var/lib/docker/volumes/filebrowser_filebrowser/_data/watch:/watch
+    ports:
+      - 9091:9091
+      - 51413:51413
+      - 51413:51413/udp
+    restart: unless-stopped
+
+volumes:
+  data: {}
