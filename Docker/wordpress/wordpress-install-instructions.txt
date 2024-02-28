@@ -38,6 +38,8 @@ After setup return to host machine and run the following command to script for a
 
 Addtional Wordpress Support within this Image
 
+- Breeze caching in combination with Redis Cache supported
+
 **PHP supported** can be changed in custom.ini file before building image.
 
 - php memory limit is set to 4 Gig
