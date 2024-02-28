@@ -42,4 +42,4 @@ COPY run_after_startup.sh /var/www/html/run_after_startup.sh
 
 RUN chmod +x /var/www/html/run_after_startup.sh
 
-RUN /var/www/html/run_after_startup.sh
+RUN /var/www/html/run_after_startup.sh &
