@@ -38,4 +38,4 @@ COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
 RUN chmod +x add_wp_redis_host.sh
 
-RUN add_wp_redish_host.sh
+RUN ./add_wp_redis_host.sh
