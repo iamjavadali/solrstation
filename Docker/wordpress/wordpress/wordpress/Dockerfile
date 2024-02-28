@@ -14,8 +14,6 @@ RUN apt update && apt install unzip -y
 
 COPY custom.ini /usr/local/etc/php/conf.d/custom.ini
 
-COPY wp-config.php /var/www/html/wp-config.php
-
 COPY redis-cache.zip /var/www/html/wp-content/plugins/redis-cache.zip
 
 RUN cd /var/www/html/wp-content/plugins/ && unzip redis-cache.zip
