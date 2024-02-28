@@ -34,12 +34,8 @@ RUN cd /var/www/html/wp-content/plugins/ && chgrp www-data breeze
 
 RUN cd /var/www/html/wp-content/plugins/ && chmod 777 breeze
 
+COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
-# Copy your Bash script into the container
-COPY add_wp_redis_host.sh /usr/local/bin/
+RUN chmod +x add_wp_redis_host.sh
 
-RUN cd /usr/local/bin/ && chmod +x add_wp_redis_host.sh
-
-# Set the script as the entrypoint
-ENTRYPOINT ["add_wp_redis_host.sh"]
-
+RUN /var/www/html/add_wp_redis_host.sh
