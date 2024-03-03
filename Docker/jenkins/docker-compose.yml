@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  jenkins:
+    image: jenkins/jenkins
+    container_name: jenkins
+    volumes:
+      - jenkins:/var/jenkins_home
+    ports:
+      - "2080:8080"
+volumes:
+  jenkins: {}
