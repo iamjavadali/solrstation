@@ -3,12 +3,13 @@ version: '3'
 services:
   jenkins:
     image: jenkins/jenkins
-    container_name: jenkins
+    container_name: jenkinspi
     volumes:
       - jenkins:/var/jenkins_home
     ports:
       - "2080:8080"
   ssh-agent:
     image: jenkins/ssh-agent
+    container_name: jenkinspi-ssh-agent
 volumes:
   jenkins: {}
