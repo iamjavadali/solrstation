@@ -8,8 +8,10 @@ services:
       - jenkins:/var/jenkins_home
     ports:
       - "2080:8080"
+    restart: always
   ssh-agent:
     image: jenkins/ssh-agent
     container_name: jenkinspi-ssh-agent
+    restart: always
 volumes:
   jenkins: {}
