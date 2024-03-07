@@ -16,3 +16,6 @@
     9 => 'OC\\Preview\\MarkDown',
     10 => 'OC\\Preview\\PDF',
   ),
+  'trusted_proxies' => ['nginx_reverse_proxy_ip'],
+  'overwriteprotocol' => 'https',
+);
