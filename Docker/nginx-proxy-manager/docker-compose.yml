@@ -14,7 +14,7 @@ services:
       - "81:81"  # You can change port 81 to any available port on your network.
     volumes:
       - nginxproxymanagerpi:/data
-      - letsencrypt:/etc/letsencrypt
+      - /var/lib/docker/volumes/nginx-proxy-manager_nginxproxymanagerpi/_data/letsencrypt:/etc/letsencrypt
     depends_on:
       - nginxproxymanagerpidb
       - nginxproxymanagerpistats
@@ -32,7 +32,7 @@ services:
     container_name: nginxproxymanagerpidb
     restart: unless-stopped
     volumes:
-      - mariadb:/var/lib/mysql
+      - /var/lib/docker/volumes/nginx-proxy-manager_nginxproxymanagerpi/_data/mariadb:/var/lib/mysql
 
   nginxproxymanagerpistats:
     build:
@@ -43,10 +43,7 @@ services:
     ports:
       - "7880:7880"
     volumes:
-      - logs:/opt/log:ro
+      - /var/lib/docker/volumes/nginx-proxy-manager_nginxproxymanagerpi/_data/logs:/opt/log:ro
 
 volumes:
-  nginxproxymanagerpi:
-  letsencrypt:
-  mariadb:
-  logs:
+  nginxproxymanagerpi: {}
