@@ -32,7 +32,7 @@ services:
     container_name: nginxproxymanagerpidb
     restart: unless-stopped
     volumes:
-      - /var/lib/docker/volumes/nginx-proxy-manager_nginxproxymanagerpi/_data/mariadb:/var/lib/mysql
+      - nginxproxymanagerpidb:/var/lib/mysql
 
   nginxproxymanagerpistats:
     build:
@@ -47,3 +47,4 @@ services:
 
 volumes:
   nginxproxymanagerpi: {}
+  nginxproxymanagerpidb: {}
