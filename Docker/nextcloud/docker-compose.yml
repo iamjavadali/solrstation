@@ -27,6 +27,7 @@ services:
   nextcloud_redis:
     image: "redis:alpine"
     container_name: nextcloud_redis
+    restart: always
     volumes:
       - nextcloud_redis:/data
 
