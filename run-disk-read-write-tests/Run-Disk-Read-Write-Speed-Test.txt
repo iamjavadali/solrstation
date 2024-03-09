@@ -46,6 +46,20 @@ sudo apt install hdparm -y
 
 sudo fdisk -l
 
+# sudo hdparm -tv /dev/nvme0n1p2
+
+# sudo hdparm -Tv /dev/nvme0n1p2
+
 # sudo hdparm -tv --direct /dev/nvme0n1p2
+
+# sudo hdparm -Tv --direct /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -tv /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -Tv /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -tv --direct /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -Tv --direct /dev/nvme0n1p2
 
 # replace /dev/nvme0n1p2 with the directory path of your disk and run command
