@@ -39,3 +39,13 @@ sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 --ti
 # Cleanup files:
 
 sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 cleanup
+
+# Disk read test with hdparm
+
+sudo apt install hdparm -y
+
+sudo fdisk -l
+
+# sudo hdparm -tv --direct /dev/nvme0n1p2
+
+# replace /dev/nvme0n1p2 with the directory path of your disk and run command
