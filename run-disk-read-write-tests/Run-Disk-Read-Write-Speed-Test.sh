@@ -18,11 +18,11 @@ cd ~/sysbench-test
 
 # Prepare files:
 
-sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 prepare
+sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 prepare >> ~/sysbench-test/read
 
 #Run test:
 
-sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 --time=60 --max-requests=0 run
+sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 --time=60 --max-requests=0 run >> ~/sysbench-test/read
 
 # Cleanup files:
 
@@ -32,11 +32,11 @@ sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 clea
 
 # Prepare files:
 
-sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 prepare
+sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 prepare >> ~/sysbench-test/write
 
 # Run test:
 
-sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 --time=60 --max-requests=0 run
+sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 --time=60 --max-requests=0 run >> ~/sysbench-test/write
 
 # Cleanup files:
 
