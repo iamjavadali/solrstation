@@ -10,7 +10,15 @@ sudo apt install sysbench -y
 
 #Prepare folder called sysbench-test
 
-mkdir ~/sysbench-test
+directory=~/sysbench-test
+
+if [ ! -d "$directory" ]; then
+    mkdir "$directory"
+    echo "Directory created successfully!"
+else
+    echo "Directory already exists!"
+fi
+
 cd ~/sysbench-test
 
 
