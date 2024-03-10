@@ -26,7 +26,10 @@ services:
     image: "redis:alpine"
     container_name: wordpressredis
     restart: always
+    volumes:
+      - wordpressredis:/data
 
 volumes:
   wordpress: {}
   wordpressdb: {}
+  wordpressredis: {}
