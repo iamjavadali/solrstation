@@ -13,8 +13,8 @@ services:
     volumes:
       - wordpress:/var/www/html
     environment:
-      WORDPRESS_CONFIG_EXTRA:
-        define( ‘WP_REDIS_HOST’, ‘wordpressredis’ );
+      WORDPRESS_CONFIG_EXTRA: |
+        define( 'WP_REDIS_HOST', 'wordpressredis' );
     depends_on:
       - wordpressdb
       - wordpressredis
