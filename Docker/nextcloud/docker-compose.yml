@@ -30,6 +30,15 @@ services:
     restart: always
     volumes:
       - nextcloud_redis:/data
+  
+  nextcloud_cron:
+    depends_on:
+      - nextcloud
+    image: moneydontbuyclass/nextcloudpi
+    restart: unless-stopped
+    volumes:
+      - nextcloud:/var/www/html
+    entrypoint: /cron.sh
 
 volumes:
   nextcloud: {}

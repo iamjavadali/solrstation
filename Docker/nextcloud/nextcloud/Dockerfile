@@ -16,3 +16,7 @@ COPY nextcloud.ini /usr/local/etc/php/conf.d/nextcloud.ini
 
 ADD config.sh /scripts/config.sh
 RUN chmod +x /scripts/config.sh && /scripts/config.sh
+
+COPY supervisord.conf /etc/supervisor/supervisord.conf 
+ENV NEXTCLOUD_UPDATE=1
+CMD ["/usr/bin/supervisord"]
