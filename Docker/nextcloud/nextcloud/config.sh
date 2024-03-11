@@ -34,3 +34,5 @@ mkdir /var/log/supervisord /var/run/supervisord
 # The following Dockerfile commands are also necessary for a sucessfull cron installation: 
 # COPY supervisord.conf /etc/supervisor/supervisord.conf 
 # CMD ["/usr/bin/supervisord"]
+
+# https://github.com/nextcloud/docker/tree/master/.examples
