@@ -28,9 +28,6 @@ services:
   wordpressredis:
     image: "redis:alpine"
     container_name: wordpressredis
-    ports:
-      - 6379:6379
-    restart: always
 
 volumes:
   wordpress: {}
