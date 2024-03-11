@@ -1,4 +1,4 @@
-sFROM mysql
+FROM mysql
 
 LABEL "Project"="Wordpress Pi"
 LABEL "Author"="Javad Ali"
