@@ -25,11 +25,3 @@ COPY breeze.zip /var/www/html/wp-content/plugins/breeze.zip
 RUN cd /var/www/html/wp-content/plugins/ && unzip breeze.zip && \
     chown -R www-data:www-data breeze && \
     chmod -R 775 breeze
-
-#COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
-
-#RUN chmod +x /var/www/html/add_wp_redis_host.sh && \
-#    chown www-data:www-data /var/www/html/add_wp_redis_host.sh \
-#    cd /var/www/html/
-
-#RUN    ./add_wp.add_wp_redis_host.sh
