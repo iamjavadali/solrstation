@@ -12,16 +12,6 @@ services:
       - 1080:80 #You can change port 1080 to any avaiable port on your network.   
     volumes:
       - wordpress:/var/www/html
-    environment:
-      – WORDPRESS_CONFIG_EXTRA=
-        define( ‘WP_REDIS_CLIENT’, ‘predis’ );
-        define( ‘WP_REDIS_SCHEME’, ‘tcp’ );
-        define( ‘WP_REDIS_HOST’, ‘wordpressredis’ );
-        define( ‘WP_REDIS_PORT’, ‘6379’ );
-        define( ‘WP_REDIS_PASSWORD’, ” );
-        define( ‘WP_REDIS_DATABASE’, ‘0’ );
-        define( ‘WP_REDIS_MAXTTL’, ‘900’ );
-        define( ‘WP_REDIS_SELECTIVE_FLUSH’, ‘xx_ ‘);
     depends_on:
       - wordpressdb
       - wordpressredis

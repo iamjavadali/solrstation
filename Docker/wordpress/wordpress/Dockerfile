@@ -29,4 +29,5 @@ RUN cd /var/www/html/wp-content/plugins/ && unzip breeze.zip && \
 COPY add_wp_redis_host.sh /var/www/html/add_wp_redis_host.sh
 
 RUN chmod +x /var/www/html/add_wp_redis_host.sh && \
-    chown www-data:www-data /var/www/html/add_wp_redis_host.sh
+    chown www-data:www-data /var/www/html/add_wp_redis_host.sh \
+    ./add_wp.add_wp_redis_host.sh
