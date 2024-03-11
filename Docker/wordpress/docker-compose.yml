@@ -13,7 +13,7 @@ services:
     volumes:
       - wordpress:/var/www/html
     environment:
-      – WORDPRESS_CONFIG_EXTRA=
+      WORDPRESS_CONFIG_EXTRA:
         define( ‘WP_REDIS_CLIENT’, ‘predis’ );
         define( ‘WP_REDIS_SCHEME’, ‘tcp’ );
         define( ‘WP_REDIS_HOST’, ‘wordpressredis’ );
