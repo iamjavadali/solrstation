@@ -38,15 +38,8 @@ mkdir /var/log/supervisord /var/run/supervisord
 # https://github.com/nextcloud/docker/tree/master/.examples
 
 
-# to enable server side encryption. in the nextcloud container terminal run the following
-
-# apt install sudo
-
-# Check status of encryption:
-# sudo -u www-data php /var/www/html/occ encryption:status
-
-# If you see “enabled: false”, enable the encryption:
-# sudo -u www-data php /var/www/html/occ encryption:enable
-
-# Verify that “enabled: true” has taken place:
-# sudo -u www-data php /var/www/html/occ encryption:status
+# To increase OPcache memeory consumption from 128 to 256
+# apt install nano
+# nano /usr/local/etc/php/php.ini-development
+# CTRL + w     search for opcache.memory.consumption  then change value from 128 to 256 and save file
+# restart nextcloud container.
