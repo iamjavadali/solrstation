@@ -1,8 +1,8 @@
 #!/bin/bash
 
 
-domain=192.168.86.58:9980 #Set this to the IP pointing to the collabora/code server
-server_name=office.solrstation.com #Set this to the domain pointed to your collabora/code server
+domain=office.solrstation.com #Set this to the IP pointing to the collabora/code server
+server_name=192.168.86.58:9980 #Set this to the domain pointed to your collabora/code server
 user=admin
 pass=password
 tz=America/New_York
