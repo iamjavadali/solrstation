@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-domain=cloud.solrstation.com #Set this to the domain pointing to the collabora/code server
+domain=192.168.86.58:9980 #Set this to the domain pointing to the collabora/code server
 server_name=office.solrstation.com #Set this to the domain pointed to your nextcloud app
 user=admin
 pass=password
