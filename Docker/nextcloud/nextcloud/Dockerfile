@@ -10,6 +10,8 @@ ENV MYSQL_HOST="nextcloud_db"
 ENV PHP_MEMORY_LIMIT="4G"
 ENV PHP_UPLOAD_LIMIT="10G"
 ENV PHP_MAX_EXECUTION_TIME="7200"
+ENV PHP_POST_MAX_SIZE="10G"
+ENV PHP_MAX_INPUT_TIME="7200"
 ENV REDIS_HOST="nextcloud_redis"
 
 COPY nextcloud.ini /usr/local/etc/php/conf.d/nextcloud.ini

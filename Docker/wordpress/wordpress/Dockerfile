@@ -1,4 +1,4 @@
-FROM wordpress
+FROM wordpress:latest
 
 LABEL "Project"="Wordpress Pi"
 LABEL "Author"="Javad Ali"

@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:latest
 
 LABEL "Project"="Wordpress Pi"
 LABEL "Author"="Javad Ali"
