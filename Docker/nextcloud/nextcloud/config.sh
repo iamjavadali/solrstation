@@ -25,7 +25,7 @@ apt install ffmpeg -y
 apt install libmagickcore-6.q16-6-extra -y
 
 # LibreOffice
-apt install libreoffice -y
+# apt install libreoffice -y
 
 # CRON via supervisor
 apt install supervisor -y
