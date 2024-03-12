@@ -24,7 +24,7 @@ apt install ffmpeg -y
 # imagemagick SVG support
 apt install libmagickcore-6.q16-6-extra -y
 
-# LibreOffice
+# LibreOffice - uncomment below to install LibreOffice.
 # apt install libreoffice -y
 
 # CRON via supervisor
@@ -37,9 +37,10 @@ mkdir /var/log/supervisord /var/run/supervisord
 
 # https://github.com/nextcloud/docker/tree/master/.examples
 
+apt install sudo -y
 
 # To increase OPcache memeory consumption from 128 to 256
-# apt install nano
+apt install nano -y
 # nano /usr/local/etc/php/php.ini-development
 # CTRL + w     search for opcache.memory.consumption  then change value from 128 to 256 and save file
 # restart nextcloud container.
