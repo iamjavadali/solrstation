@@ -7,19 +7,22 @@ I have created guides for your Home lab server running docker containers on a si
 Containers in repo:
 1.	WordPress **(Apache)**
 2.	WordPress-DB **(MySQL)**
-3.  NextCloud
-4.	NextCloud-DB **(MariaDB)**
-5.	NextCloud-Redis **(Alpine)**
-6.	NGINX Proxy Manager
-7.	NGINX Proxy Manager **(MariaDB)**
-8.	NGINX Proxy Manager Stats - GoAccess Charts **(Nginx)**
-9.	Plex
-10.	FileBrowser
-11.	Transmission
-12.	Minecraft Server
-13.	OnlyOfficeServer
-14. HomeAssistant
-15. Portainer
+3.  WordPress-Redis
+4.  NextCloud
+5.	NextCloud-DB **(MariaDB)**
+6.	NextCloud-Redis **(Alpine)**
+7.  NextCloud-Cron
+8.	NGINX Proxy Manager
+9.	NGINX Proxy Manager **(MariaDB)**
+10.	NGINX Proxy Manager Stats - GoAccess Charts **(Nginx)**
+11.	Plex
+12.	FileBrowser
+13.	Transmission
+14.	Minecraft Server
+15.	OnlyOfficeServer
+16. HomeAssistant
+17. Portainer
+18. Collabora/code - Nextcloud Office Server
 
 Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
 1.	WatchTower
