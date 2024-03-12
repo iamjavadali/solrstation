@@ -13,3 +13,7 @@ sudo docker pull collabora/code
 
 
 sudo docker run --name collabora -t -d -p 9980:9980 --privileged -e username=$user -e password=$pass -e “domain=$domain” -e TZ=$tz -e “server_name=$server_name” --restart always --cap-add MKNOD collabora/code
+
+
+# URL (and Port) of Collabora Online-server: https://office.solrstation.com
+# WPOI allow list: 172.70.0.0/16
