@@ -15,5 +15,5 @@ sudo docker pull collabora/code
 sudo docker run --name collabora -t -d -p 9980:9980 --privileged -e username=$user -e password=$pass -e “domain=$domain” -e TZ=$tz -e “server_name=$server_name” --restart always --cap-add MKNOD collabora/code
 
 
-# URL (and Port) of Collabora Online-server: https://office.solrstation.com
-# WPOI allow list: 172.70.0.0/16
+# URL (and Port) of Collabora Online-server: https://office.solrstation.com    #change this to your url behind reverse proxy
+# WPOI allow list: 172.70.0.0/16     #check your logs when connecting to document and it will give you a rejected IP. you can take the first two numbers and add .0.0/16 to the end of it.
