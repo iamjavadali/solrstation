@@ -35,6 +35,7 @@ services:
     depends_on:
       - nextcloud
     image: moneydontbuyclass/nextcloudpi
+    container_name: nextcloud_cron
     restart: unless-stopped
     volumes:
       - nextcloud:/var/www/html
