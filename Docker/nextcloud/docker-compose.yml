@@ -18,6 +18,7 @@ services:
   nextcloud_db:
     build:
       context: ./mysql
+    image: moneydontbuyclass/nextcloudpidb
     container_name: nextcloud_db
     restart: always
     volumes:
