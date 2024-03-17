@@ -1,0 +1,12 @@
+# docker pull collabora/code
+
+# docker run --name collabora -t -d -p 9980:9980 -e “domain=xxxxx.com” -e “server_name=office.xxxxx.com” --restart no --cap-add MKNOD collabora/code
+
+# coolconfig --o:admin_console.username=username
+
+# coolconfig --o:admin_console.password=password
+
+# Instructions to run server
+
+sudo docker pull collabora/code
+sudo docker run --name collabora -t -d -p 9980:9980 -e “domain=office.solrstation.com” -e “server_name=cloud.solrstation.com” --restart no --cap-add MKNOD collabora/code

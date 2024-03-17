@@ -1,0 +1,50 @@
+
+Steps to replicate:
+
+Clone Repo
+
+#	git clone https://github.com/moneydontbuyclass/solrstation.git
+
+Enter docker-compose directory
+
+#	cd solrstation/Docker/wordpress/
+
+Build Dockerfile
+
+#	sudo docker compose build
+
+Build + Run docker compose
+
+#	sudo docker compose up -d
+
+
+Port Info:
+
+	wordpress port: 1080
+	mysql port: 3306
+
+After the wordpress is running for the first time, you must visit its url in any web browser to start setup
+
+# host-machine-ip:1080
+# example: 192.168.1.50:1080	
+
+This process can take a couple of minutes depending on your machine.
+
+After setup return to host machine and run the following command to script for adding redis support.
+
+# sudo docker exec wordpress /var/www/html/add_wp_redis_host.sh
+
+
+
+Addtional Wordpress Support within this Image
+
+- Breeze caching in combination with Redis Cache supported
+
+**PHP supported** can be changed in custom.ini file before building image.
+
+- php memory limit is set to 4 Gig
+- upload max size is set to 10 Gig
+- post max size is set to 4 Gig
+- max execution time is set to 1 hour and 40 min
+- max input time is set to 1 hour and 40 min
+- php extension mysqli is added

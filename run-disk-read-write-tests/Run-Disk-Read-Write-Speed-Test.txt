@@ -1,0 +1,65 @@
+Raspberry Pi Disk Read/Write Speeds Test
+
+
+# Install Instructions
+
+sudo apt update
+sudo apt install sysbench -y
+
+#Prepare Folder for Testing
+
+mkdir ~/sysbench-test
+cd ~/sysbench-test
+
+
+# Test read speeds
+
+# Prepare files:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 prepare
+
+#Run test:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 --time=60 --max-requests=0 run
+
+# Cleanup files:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqrd --file-num=10 cleanup
+
+# Test write speeds
+
+# Prepare files:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 prepare
+
+# Run test:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 --time=60 --max-requests=0 run
+
+# Cleanup files:
+
+sysbench fileio --file-total-size=500M --file-test-mode=seqwr --file-num=10 cleanup
+
+# Disk read test with hdparm
+
+sudo apt install hdparm -y
+
+sudo fdisk -l
+
+# sudo hdparm -tv /dev/nvme0n1p2
+
+# sudo hdparm -Tv /dev/nvme0n1p2
+
+# sudo hdparm -tv --direct /dev/nvme0n1p2
+
+# sudo hdparm -Tv --direct /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -tv /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -Tv /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -tv --direct /dev/nvme0n1p2
+
+# sudo hdparm --offset 20 -Tv --direct /dev/nvme0n1p2
+
+# replace /dev/nvme0n1p2 with the directory path of your disk and run command
