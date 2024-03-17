@@ -1,0 +1,18 @@
+version: '3.3'
+
+services:
+  uptime-kuma:
+    image: louislam/uptime-kuma:latest
+    container_name: uptime-kuma
+    environment:
+      - UID=1000 # change user ID for your user 1000 is standard for user: pi
+      - GID=1000 # change group ID for your user 1000 is standard for group: pi
+      - TZ=America/New_York # change this to your timezone
+    volumes:
+      - uptime-kuma:/app/data
+      - /var/run/docker.sock:/var/run/docker.sock   #do not edit this line. It is needed to monitor docker containers in uptime-kuma
+    ports:
+      - "1337:3001" # you can change the port to your desire port
+    restart: unless-stopped
+volumes:
+  uptime-kuma: {}
