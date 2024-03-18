@@ -16,7 +16,7 @@ Nextcloud image errors fixed and addon supported
 
 # In Host Machine
 
-git clone https://github.com/moneydontbuyclass/solrstation.git
+git clone https://github.com/iamjavadali/solrstation.git
 cd solrstation/docker-containers/nextcloud/
 sudo docker compose build
 sudo docker compose up -d

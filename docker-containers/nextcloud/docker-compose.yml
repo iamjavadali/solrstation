@@ -5,7 +5,7 @@ services:
   nextcloud:
     build:
       context: ./nextcloud
-    image: moneydontbuyclass/nextcloudpi
+    image: iamjavadali/nextcloudpi
     container_name: nextcloud
     restart: unless-stopped
     links:
@@ -18,7 +18,7 @@ services:
   nextcloud_db:
     build:
       context: ./mysql
-    image: moneydontbuyclass/nextcloudpidb
+    image: iamjavadali/nextcloudpidb
     container_name: nextcloud_db
     restart: always
     volumes:
@@ -35,7 +35,7 @@ services:
   nextcloud_cron:
     depends_on:
       - nextcloud
-    image: moneydontbuyclass/nextcloudpi
+    image: iamjavadali/nextcloudpi
     container_name: nextcloud_cron
     restart: unless-stopped
     volumes:

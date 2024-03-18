@@ -9,4 +9,8 @@
 # Instructions to run server
 
 sudo docker pull collabora/code
+
+
+# remember to change the domain and server_name url
+
 sudo docker run --name collabora -t -d -p 9980:9980 -e “domain=office.solrstation.com” -e “server_name=cloud.solrstation.com” --restart no --cap-add MKNOD collabora/code

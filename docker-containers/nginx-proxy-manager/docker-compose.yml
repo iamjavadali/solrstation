@@ -5,7 +5,7 @@ services:
   nginxproxymanagerpi:
     build:
       context: ./nginxproxymanager
-    image: moneydontbuyclass/nginxproxymanagerpi
+    image: iamjavadali/nginxproxymanagerpi
     container_name: nginxproxymanagerpi
     restart: unless-stopped
     ports:
@@ -28,7 +28,7 @@ services:
   nginxproxymanagerpidb:
     build:
       context: ./mariadb
-    image: moneydontbuyclass/nginxproxymanagerpidb
+    image: iamjavadali/nginxproxymanagerpidb
     container_name: nginxproxymanagerpidb
     restart: unless-stopped
     volumes:
@@ -37,7 +37,7 @@ services:
   nginxproxymanagerpistats:
     build:
       context: ./goaccess
-    image: moneydontbuyclass/nginxproxymanagerpistats
+    image: iamjavadali/nginxproxymanagerpistats
     container_name: nginxproxymanagerpistats
     restart: unless-stopped
     ports:

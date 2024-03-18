@@ -5,7 +5,7 @@ services:
   wordpress:
     build:
       context: ./wordpress
-    image: moneydontbuyclass/wordpresspi
+    image: iamjavadali/wordpresspi
     container_name: wordpress
     restart: unless-stopped
     ports:
@@ -23,7 +23,7 @@ services:
   wordpressdb:
     build:
       context: ./mysql
-    image: moneydontbuyclass/wordpresspidb
+    image: iamjavadali/wordpresspidb
     container_name: wordpressdb
     restart: always
     volumes:

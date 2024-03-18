@@ -2,7 +2,7 @@ Steps to replicate:
 
 Clone Repo
 
-#	git clone https://github.com/moneydontbuyclass/solrstation.git
+#	git clone https://github.com/iamjavadali/solrstation.git
 
 Enter docker-compose directory
 
