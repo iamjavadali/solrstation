@@ -19,3 +19,21 @@ COPY redis-cache.zip /var/www/html/wp-content/plugins/redis-cache.zip
 RUN cd /var/www/html/wp-content/plugins/ && unzip redis-cache.zip && \
     chown -R www-data:www-data redis-cache && \
     chmod -R 775 redis-cache
+
+COPY updraftplus.zip /var/www/html/wp-content/plugins/updraftplus.zip
+
+RUN cd /var/www/html/wp-content/plugins/ && unzip updraftplus.zip && \
+    chown -R www-data:www-data updraftplus && \
+    chmod -R 775 updraftplus
+
+COPY wp-rocket.zip /var/www/html/wp-content/plugins/wp-rocket.zip
+
+RUN cd /var/www/html/wp-content/plugins/ && unzip wp-rocket.zip && \
+    chown -R www-data:www-data wp-rocket && \
+    chmod -R 775 wp-rocket
+
+COPY wp-mail-smtp-pro.zip /var/www/html/wp-content/plugins/wp-mail-smtp-pro.zip
+
+RUN cd /var/www/html/wp-content/plugins/ && unzip wp-mail-smtp-pro.zip && \
+    chown -R www-data:www-data wp-mail-smtp-pro && \
+    chmod -R 775 wp-mail-smtp-pro

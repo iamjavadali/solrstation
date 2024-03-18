@@ -30,6 +30,12 @@ After the wordpress is running for the first time, you must visit its url in any
 
 This process can take a couple of minutes depending on your machine.
 
+# The following plugins are added and supported with this image build.
+
+- Redis Cache
+- Updraft Premium
+- WP Rocket
+- WP Mail SMTP Pro
 
 **PHP supported** can be changed in custom.ini file before building image.
 
