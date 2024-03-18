@@ -1,14 +1,26 @@
 Nextcloud Installtion Instructions
 
+##############################
+Nextcloud image errors fixed and addon supported
+- Redis Cache Server
+- Nextcloud Cron Job Fix
+- All Errors fixed
+- Php value ediable in nextcloud.ini file
+- Nginx Reverse Proxy Manager Support
+- Video Thumbnail Support
+- Maintenance window start support
+- Next Cloud office Ready (Collabora Office Server - Install seperately)
+##############################
+
 # In Host Machine
 
 git clone https://github.com/moneydontbuyclass/solrstation.git
-cd solrstation/Docker/Nextcloud/NCImage
+cd solrstation/docker-containers/nextcloud/
 sudo docker compose build
 sudo docker compose up -d
 
 
-#Run these commands after the container is up and running.
+#Run these commands after the container is up and running in your docker host machine.
 
 sudo -i
 cd /var/lib/docker/volumes/ncimage_nextcloud/_data/config
