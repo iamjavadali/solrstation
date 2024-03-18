@@ -12,7 +12,7 @@ services:
       - uptime-kuma:/app/data
       - /var/run/docker.sock:/var/run/docker.sock   #do not edit this line. It is needed to monitor docker containers in uptime-kuma
     ports:
-      - "1337:3001" # you can change the port to your desire port
+      - "3001:3001" # you can change the port to your desire port
     restart: unless-stopped
 volumes:
   uptime-kuma: {}
