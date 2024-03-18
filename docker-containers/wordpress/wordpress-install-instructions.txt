@@ -39,9 +39,9 @@ This process can take a couple of minutes depending on your machine.
 
 **PHP supported** can be changed in custom.ini file before building image.
 
-- php memory limit is set to 4 Gig
-- upload max size is set to 10 Gig
-- post max size is set to 4 Gig
-- max execution time is set to 1 hour and 40 min
-- max input time is set to 1 hour and 40 min
+- php memory limit is set to 1 Gig (1G)
+- upload max size is set to 2 Gig (2G)
+- post max size is set to 2 Gig (2G)
+- max execution time is set to 1 hour (3600)
+- max input time is set to 1 hour (3600)
 - php extension mysqli is added
