@@ -1,0 +1,69 @@
+******************************************************************
+# To add main docker host
+******************************************************************
+
+# On uptime-kuma go to "Settings" -> "Docker Hosts" -> "Setup Docker Hosts"
+# Connection Type: Socket
+# Docker Deamon: /var/run/docker.sock
+# Test connection
+
+******************************************************************
+# To add addtional docker hosts to uptime-kuma
+******************************************************************
+
+# on docker machine update docker host to accept TCP host connections
+
+sudo nano /etc/docker/daemon.json
+
+# Configure TCP Socket:
+
+# Inside the daemon.json file, add or modify the "hosts" key to specify the TCP socket configuration. For TCP bridge mode, you'll want to set the host to tcp://0.0.0.0:2375, where 0.0.0.0 means Docker will listen on all network interfaces and 2375 is the default Docker TCP port:
+
+{
+  "hosts": ["tcp://0.0.0.0:2375"]
+}
+
+# Save and Restart Docker:
+
+# Save the changes to the daemon.json file and exit the text editor. Restart the Docker daemon to apply the new configuration:
+
+sudo systemctl restart docker
+
+# If the daemon fails to start, it may be because there are duplicate keys, in this case hosts, -H, that is already part of the daemon configuration.
+
+# You can edit the startup configuration using 
+
+sudo systemctl edit docker.service.
+
+# copy below into line inbetween these lines
+
+### Anything between here and the comment below will become the new contents of the file
+
+# The code below goes in here
+
+### Lines below this comment will be discarded
+
+[Service]
+# The blank ExecStart is required to clear the current entry point
+ExecStart=
+# Replace the existing ExecStart but only remove the properties that you have added into the daemon.json file, leave all else the same.
+ExecStart=/usr/bin/dockerd --containerd=/run/containerd/containerd.sock
+
+# Stop and start docker service
+
+sudo systemctl stop docker
+
+sudo systemctl start docker
+
+# Check status to make sure docker is running
+
+systemctl status docker
+
+******************************************************************
+# add additonal docker host to uptime-kuma
+******************************************************************
+
+# on uptime-kuma go to "Settings" -> "Docker Hosts" -> "Setup Docker Hosts"
+# Connection Type: TCP / HTTP
+# Docker Deamon: http://<your-docker-machine-ip>:2375
+# Test connection
