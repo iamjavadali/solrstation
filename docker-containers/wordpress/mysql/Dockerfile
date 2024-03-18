@@ -1,4 +1,4 @@
-FROM mysql
+FROM mysql:8.0.36-debian
 
 LABEL "Project"="Wordpress Pi"
 LABEL "Author"="Javad Ali"
