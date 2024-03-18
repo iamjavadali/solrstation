@@ -3,13 +3,15 @@ Nextcloud Installtion Instructions
 ##############################
 Nextcloud image errors fixed and addon supported
 - Redis Cache Server
-- Nextcloud Cron Job Fix
+- Nextcloud Cron Job Fix - via supervisord
 - All Errors fixed
 - Php value ediable in nextcloud.ini file
 - Nginx Reverse Proxy Manager Support
 - Video Thumbnail Support
 - Maintenance window start support
 - Next Cloud office Ready (Collabora Office Server - Install seperately)
+- opcache.memory_consumption=128 increase to opcache.memory_consumption=256
+- smb client
 ##############################
 
 # In Host Machine
