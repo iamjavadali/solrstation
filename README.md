@@ -23,17 +23,21 @@ Containers in repo:
 16. HomeAssistant
 17. Portainer
 18. Collabora/code - Nextcloud Office Server
+19. Pi-Hole
+20. Uptime-Kuma
+21. Jenkins
 
 Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
-1.	WatchTower
-2.	Pi-Hole
-3.	Uptime Kuma
-4.  Samba
+1. WatchTower
+2. Samba
 
 Expect the following soon:
-1.	JDownloader
-2.	Whoogle
+1. JDownloader
+2. Whoogle
+3. Pi
 
 More Services are to be added soon. If you would like a service, please let me know.
 
-Please get in touch with me at info@javadali.com for more information or if you need support. Thank you for your contributions. 
+Please get in touch with me at **info@javadali.com** for more information or if you need support.
+
+Thank you for your contributions. 
