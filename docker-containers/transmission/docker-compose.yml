@@ -6,9 +6,9 @@ services:
     image: lscr.io/linuxserver/transmission:latest
     container_name: Transmission
     environment:
-      - PUID=1001 #change this to your docker user ID
-      - PGID=1001 #change this to your docker user ID
-      - TZ=America/New_York
+      - PUID=1000 #change this to your docker user ID - default: pi=1000. root = 0
+      - PGID=1000 #change this to your docker user ID - default: pi=1000. root = 0
+      - TZ=America/New_York #change this to your local time zone
       - TRANSMISSION_WEB_HOME= #optional
       - USER= #optional
       - PASS= #optional
@@ -16,7 +16,7 @@ services:
       - PEERPORT= #optional
       - HOST_WHITELIST= #optional
     volumes:
-      - data:/config
+      - transmission:/config
       - /var/lib/docker/volumes/filebrowser_filebrowser/_data/downloads:/downloads
       - /var/lib/docker/volumes/filebrowser_filebrowser/_data/watch:/watch
     ports:
@@ -26,4 +26,4 @@ services:
     restart: unless-stopped
 
 volumes:
-  data: {}
+  transmission: {}
