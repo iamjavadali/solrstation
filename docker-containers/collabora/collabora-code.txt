@@ -39,3 +39,15 @@ chmod +x collabora-code.sh
 # Combine both IP ranges together and add them into your WOPI allow list
 example: 172.70.0.0/16, 162.158.0.0/16
 # Open a document again in nextcloud. Now you should not have any WOPI errors, and the document should open without any further errors.
+
+# Nginx Reverse Proxy Manager Setup
+scheme = https
+ip = ip of host
+port = port number of collabora docker container
+websocket support = on
+block common exports = off
+ssl = on
+force ssl = on
+HTTP/s support = on
+HSTS enabled = on
+HSTS subdomains = on
