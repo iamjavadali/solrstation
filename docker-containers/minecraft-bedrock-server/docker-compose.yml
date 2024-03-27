@@ -1,0 +1,21 @@
+version: "3.4"
+
+services:
+
+  minecraftbedrockserver:
+    image: itzg/minecraft-bedrock-server
+    container_name: minecraftbedrockserver
+    restart: unless-stopped
+    tty: true
+    stdin_open: true
+    ports:
+      - "19132:19132/udp"
+    environment:
+      EULA: "TRUE"
+      GAMEMODE: survival
+      DIFFICULTY: normal
+    volumes:
+      - minecraftbedrockserver:/data
+
+volumes:
+  minecraftbedrockserver: {}
