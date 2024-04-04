@@ -1,0 +1,14 @@
+# Get GIT
+sudo apt-get install git
+
+# Get GIT repo
+git clone https://github.com/iamjavadali/solrstation.git
+
+# Go into docker compose directory
+cd solrstation/docker-containers/sonarqubepi/
+
+# Start docker-compose image
+sudo docker compose up -d
+
+# Remove container
+docker rm sonarqubepi
