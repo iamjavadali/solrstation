@@ -26,6 +26,8 @@ Containers in repo:
 19. Pi-Hole
 20. Uptime-Kuma
 21. Jenkins
+22. SonarQube
+23. Sonatype Nexus Repository
 
 Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
 1. WatchTower
