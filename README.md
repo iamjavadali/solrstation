@@ -4,7 +4,7 @@ Solar Powered Home Lab Docker Server on Raspberry Pi 4 & 5
 
 I have created guides for your Home lab server running docker containers on a single board computer (sbc), the Raspberry Pi 4 or 5. This SBC is powerful yet energy-efficient enough that your solar array can easily power this 100% renewable and free. 
 
-Containers in repo:
+Containers in repo: solrstation/docker-containers/
 1.	WordPress **(Apache)**
 2.	WordPress-DB **(MySQL)**
 3.  WordPress-Redis
@@ -29,7 +29,7 @@ Containers in repo:
 22. SonarQube
 23. Sonatype Nexus Repository
 
-Current Containers **How-to** are in the process of uploading to **solrstation/Docker** repo:
+Current Containers **How-to** are in the process of uploading to **solrstation/docker-containers/** repo:
 1. WatchTower
 2. Samba
 
