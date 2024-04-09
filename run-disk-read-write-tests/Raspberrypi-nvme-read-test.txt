@@ -1,0 +1,11 @@
+# To install hdparm
+
+sudo apt install hdparm -y
+
+# To test read speeds for NVME Drive
+
+sudo hdparm -t --direct /dev/nvme0n1
+
+# To test read speeds for SSD USB Drive
+
+sudo hdparm -t --direct /dev/sda
